@@ -1,0 +1,4 @@
+{
+  "source": "http://s3.amazonaws.com/stepfunctionslocal/StepFunctionsLocal.tar.gz",
+  "jar": "StepFunctionsLocal.jar"
+}
