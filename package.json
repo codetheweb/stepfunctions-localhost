@@ -20,5 +20,26 @@
     "ora": "^3.4.0",
     "tar": "^4.4.10",
     "zlib": "^1.0.5"
-  }
+  },
+  "keywords": [
+    "🛠",
+    "aws",
+    "step functions",
+    "state machines",
+    "step",
+    "function",
+    "state",
+    "machine",
+    "serverless",
+    "local",
+    "offline"
+  ],
+  "bugs": {
+    "url": "https://github.com/codetheweb/stepfunctions-localhost/issues"
+  },
+  "homepage": "https://github.com/codetheweb/stepfunctions-localhost#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codetheweb/stepfunctions-localhost.git"
+  },
 }
