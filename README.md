@@ -15,24 +15,32 @@ Heavily inspired by [dynamodb-localhost](https://www.npmjs.com/package/dynamodb-
 ## Usage
 
 ```javascript
-const stepfunctionsLocal = require('stepfunctions-localhost');
+const StepFunctionsLocal = require('stepfunctions-localhost');
+
+const stepfunctionsLocal = new StepFunctionsLocal();
 
 (async () => {
   await stepfunctionsLocal.install();
 
-  stepfunctionsLocal.start();
+  stepfunctionsLocal.start({}).on('data', data => console.log(data.toString()));
 
-  stepfunctionsLocal.stop();
+  setTimeout(() => {
+    stepfunctionsLocal.stop();
 
-  stepfunctionsLocal.remove();
+    stepfunctionsLocal.remove();
+  }, 5000);
 })();
 ```
 
-This will download the files required to run step functions, start the step function server, stop the server, then clean up after itself.
+This will download the files required to run step functions, start the step function server, wait 5 seconds, then stop the server and clean up after itself.
 
 ## API
 
-### `.install(path)`
+### `new StepFunctionsLocal(options)`
+
+Creates a new instance.  `options` defaults to `{quiet = false, path = './.step-functions-local'}`.
+
+### `.install()`
 
 Downloads files required to run step functions.  Path defaults to `./.step-functions-local`.
 
@@ -75,12 +83,12 @@ Starts the local server.  Options match those of the actual step function server
 
 For example, to set the account ID, the options object would be `{account: 'fake-account-id'}`.
 
-In addition, the `options` object may contain a parameter called `path`, which points to the directory of the local installation.  Defaults to `./.step-functions-local`.
+Returns the stdout stream of the spawned server process.
 
 ### `.stop()`
 
 Stops the currently running instance.
 
-### `.remove(path)`
+### `.remove()`
 
-Removes local files that have been downloaded.  Path defaults to `./.step-functions-local`.
+Removes local files that have been downloaded.
