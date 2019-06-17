@@ -1,6 +1,16 @@
 # 🛠 stepfunctions-localhost
 
-A package to install and run AWS's [Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html) locally.
+A wrapper for AWS's [Step Functions Local](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html).
+
+Heavily inspired by [dynamodb-localhost](https://www.npmjs.com/package/dynamodb-localhost).
+
+## Requirements
+
+- Java Runtime Engine (JRE) version 6.x or newer
+
+## Install
+
+`npm install stepfunctions-localhost`
 
 ## Usage
 
